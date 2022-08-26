@@ -1,12 +1,19 @@
-"use strict";
+const numberOFFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
 
+const personalMoviDB = {
+    count: numberOFFilms,
+    movies: {},
+    actors: {},
+    genres: [],
+    privat: false
+};
 
-let bb=15;
-console.log(bb);
- let a=15;
+const a = prompt ('Один из последних просмотренных фильмов?', ''),
+      b = prompt ('На сколько оцените его?', ''),
+      c = prompt ('Один из последних просмотренных фильмов?', ''),
+      d = prompt ('На сколько оцените его?', '');
 
+personalMoviDB.movies[a] = b;
+personalMoviDB.movies[c] = d;
 
-let nimber = 5;
-const leftBorderWidth = 1;
-
-number = 10;
+console.log(personalMoviDB);
