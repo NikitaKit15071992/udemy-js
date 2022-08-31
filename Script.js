@@ -8,12 +8,25 @@ const personalMoviDB = {
     privat: false
 };
 
-const a = prompt ('Один из последних просмотренных фильмов?', ''),
-      b = prompt ('На сколько оцените его?', ''),
-      c = prompt ('Один из последних просмотренных фильмов?', ''),
-      d = prompt ('На сколько оцените его?', '');
+for (let i = 0; i < 2; i++) {
+    const a = prompt ('Один из последних просмотренных фильмов?', ''),
+          b = prompt ('На сколько оцените его?', '');
+    if (a != null && b != null && a != '' && b !='' && a.length < 50) {
+        personalMoviDB.movies[a] = b;
+    } else {
+        i--;
+    }
+}
 
-personalMoviDB.movies[a] = b;
-personalMoviDB.movies[c] = d;
+if (personalMoviDB.count < 10) {
+    console.log('Просмотренно слишком мало фильмов');
+} else if (personalMoviDB.count >= 10 && personalMoviDB.count < 30) {
+    console.log('Вы классический зритель');
+} else if (personalMoviDB.count > 30) {
+    console.log('Вы киноман')
+} else {
+    console.log('Произощла ошибка')
+}
 
 console.log(personalMoviDB);
+
